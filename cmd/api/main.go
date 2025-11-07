@@ -1,10 +1,13 @@
 package main
 
-import "log"
+import (
+	"log"
+	"tiago/internal/env"
+)
 
 func main() {
 	cfg := config{
-		addr: ":8080",
+		addr: env.GetString("ADDR", ":8880"),
 	}
 
 	app := application{
